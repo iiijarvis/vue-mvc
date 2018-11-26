@@ -122,7 +122,7 @@ var compileUtil = {
     },
     _getValue: function(vm, exp) {
         // 调用defineProperty中的get方法
-        var val = vm._data.data;
+        var val = vm;
         // 获取形式：a.b.c、 a.b、 a
         exp = exp.split(".");
         exp.forEach(function(k) {
@@ -131,7 +131,7 @@ var compileUtil = {
         return val;
     },
     _setValue: function(vm, exp, value) {
-        var val = vm._data.data;
+        var val = vm;
         exp = exp.split(".");
         exp.forEach(function(k, i) {
             if(i < exp.length - 1) {
